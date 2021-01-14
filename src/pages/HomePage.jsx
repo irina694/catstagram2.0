@@ -12,5 +12,18 @@
     // Since you are now taking the data out of the context directly, delete the import data from data.json statement
     // and don't pass it in as props to FeedList
 
-import React from 'react';
-import data from '../data.json';
+import React from 'react'
+import data from '../data.json'
+import ImageUploaderForm from '../components/ImageUploaderForm.jsx'
+import FeedList from '../components/FeedList.jsx'
+
+function HomePage() {
+  return (
+    <div className="HomePage">
+        <ImageUploaderForm />
+        <FeedList />
+    </div>
+  )
+}
+
+export default HomePage

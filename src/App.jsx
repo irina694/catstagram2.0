@@ -5,6 +5,7 @@
 	// include them inside of App
 	// export the App component!
 
+
 // Exercise 6: Provide Context
     // create PhotosContext outside of the component
     // Wrap the entirety of the contents of the App component with the PhotosContext provider
@@ -37,14 +38,17 @@
 	// set up Route to with paths to each page (hint: HomePage should "/") and with the appropriate component
 
 
-import React from 'react';
+import React from 'react'
+import Header from './components/Header.jsx'
+import HomePage from './pages/HomePage.jsx'
 
 function App() {
     return (
-        <div>
+        <div className="App">
+          <Header />
+          <HomePage />
         </div>
     );
 }
 
 export default App;
-
