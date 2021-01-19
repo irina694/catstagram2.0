@@ -41,12 +41,15 @@
 import React from 'react'
 import Header from './components/Header.jsx'
 import HomePage from './pages/HomePage.jsx'
+import data from './data.json'
 
 function App() {
+
+const { photos } = data;
     return (
         <div className="App">
           <Header />
-          <HomePage />
+          <HomePage photos={ data }/>
         </div>
     );
 }

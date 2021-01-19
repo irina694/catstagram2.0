@@ -15,10 +15,17 @@
 import React from 'react'
 import FeedItem from './FeedItem'
 
-function FeedList() {
+function FeedList(props) {
+  const { photos } = props.photos;
+  console.log("FeedList photos:");
+  console.log(photos);
     return (
       <div className="FeedList">
-        <FeedItem />
+        {
+          photos.map(( photo, i ) =>
+            <FeedItem photo={ photo } key={i} />
+          )
+        }
       </div>
     )
 }

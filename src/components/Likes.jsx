@@ -20,12 +20,14 @@
 
 import React from 'react';
 
-function Likes() {
+function Likes( props ) {
+
+  const { likes } = props;
 
   return (
 
     <div className="Likes">
-      <span></span>
+      <span>{likes}</span>
       <button>Like</button>
     </div>
 

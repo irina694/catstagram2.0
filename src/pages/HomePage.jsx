@@ -13,15 +13,17 @@
     // and don't pass it in as props to FeedList
 
 import React from 'react'
-import data from '../data.json'
 import ImageUploaderForm from '../components/ImageUploaderForm.jsx'
 import FeedList from '../components/FeedList.jsx'
 
-function HomePage() {
+function HomePage( props ) {
+
+  const photos = props.photos;
   return (
+
     <div className="HomePage">
         <ImageUploaderForm />
-        <FeedList />
+        <FeedList photos={ photos }/>
     </div>
   )
 }
