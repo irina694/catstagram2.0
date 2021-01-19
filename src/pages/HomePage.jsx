@@ -18,7 +18,7 @@ import FeedList from '../components/FeedList.jsx'
 
 function HomePage( props ) {
 
-  const photos = props.photos;
+  const { photos } = props;
   return (
 
     <div className="HomePage">

@@ -16,14 +16,17 @@ import React from 'react'
 import FeedItem from './FeedItem'
 
 function FeedList(props) {
-  const { photos } = props.photos;
-  console.log("FeedList photos:");
-  console.log(photos);
+  const { photos } = props
+
+  console.log(`FeedList photos:`)
+  console.log(photos)
+
     return (
       <div className="FeedList">
         {
+          // Photos is an array
           photos.map(( photo, i ) =>
-            <FeedItem photo={ photo } key={i} />
+            <FeedItem photo={ photo } key={ i } />
           )
         }
       </div>

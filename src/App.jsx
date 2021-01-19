@@ -49,7 +49,7 @@ const { photos } = data;
     return (
         <div className="App">
           <Header />
-          <HomePage photos={ data }/>
+          <HomePage photos={ photos }/>
         </div>
     );
 }

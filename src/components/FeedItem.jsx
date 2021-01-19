@@ -16,13 +16,13 @@ import React from 'react';
 import Likes from './Likes.jsx'
 
 function FeedItem( props ) {
-const { photo, i } = props;
-const { url, likes } = photo;
+const { photo, i } = props
+const { url, likes, userLiked } = photo
 
   return (
     <div className="FeedItem">
       <img src={ url }/>
-      <Likes likes={ likes }/>
+      <Likes likes={ likes } userLiked={ userLiked }/>
     </div>
   )
 }
