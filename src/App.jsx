@@ -38,20 +38,56 @@
 	// set up Route to with paths to each page (hint: HomePage should "/") and with the appropriate component
 
 
-import React from 'react'
+import React, {createContext,useState} from 'react'
 import Header from './components/Header.jsx'
 import HomePage from './pages/HomePage.jsx'
 import data from './data.json'
 
+export const PhotosContext = createContext()
+
 function App() {
 
-const { photos } = data;
-    return (
-        <div className="App">
-          <Header />
-          <HomePage photos={ photos }/>
-        </div>
-    );
+
+
+  const [ photos, setPhotosData ] = useState( data.photos )
+
+  const addPhoto = url => {
+    console.log(`Adding new photo with url: ${url}`)
+    // Create new photo
+    if ( url.indexOf('http') > -1 || url.indexOf('www') > -1 ) {
+      const photo = {
+        id: photos.length + 1,
+        likes: 0,
+        title: url,
+        url: url,
+        userLiked: false
+      }
+
+      console.log(`New photo object:`);
+      console.log(photo);
+
+      const photoArray = [photo]
+      const newArray = [...photoArray, ...photos]
+
+      setPhotosData(newArray)
+
+
+    } else {
+      console.log(`Invalid photo URL. Please make sure the URL starts with 'http', 'https' or 'www'.`);
+    }
+
+  }
+
+  return (
+      <div className="App">
+        <PhotosContext.Provider value={{ photos: photos, addPhoto: addPhoto }}>
+            <Header />
+            <HomePage photos={ photos }/>
+        </PhotosContext.Provider>
+
+
+      </div>
+  );
 }
 
 export default App;

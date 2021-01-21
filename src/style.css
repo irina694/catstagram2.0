@@ -42,6 +42,11 @@ body {
     margin-bottom: 15px;
 }
 
+.FeedItem img {
+  max-width:100%;
+  max-width:100%;
+}
+
 .Image {
     width: 100%;
 }

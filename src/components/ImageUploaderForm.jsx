@@ -17,6 +17,8 @@
     // handleSubmit will be the one submitting - ie console.log the current url in the state for now.
     // and on handleSubmit, you will want to reset the state.
 
+
+
 // Exercise 6: Provide Context BONUS
     // Goal: make the ImageUploaderForm actually upload an image to the feed!
     // When a user inputs a full image url, it should update the
@@ -24,14 +26,36 @@
     // You will need to create an addPhoto function in App.jsx (see instructions there).
     // In this component, you will need to pull out addPhoto from context and call it on handleSubmit and pass in the url.
 
-import React from 'react';
+import React, {useState,useContext} from 'react'
+import {PhotosContext} from '../App'
 
 function ImageUploaderForm() {
 
+  const [ url, setUrlValue ] = useState('')
+
+  const handleChange = (e) => {
+    e.preventDefault()
+    setUrlValue(e.target.value)
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(`Current URL: ${url}`)
+
+    addPhoto(url)
+
+    // Reset state
+    setUrlValue('')
+  }
+
+//  const uploadNewPhoto = useContext()
+const { addPhoto } = useContext(PhotosContext)
+
+
   return (
     <form className="ImageUploaderForm">
-      <input />
-      <button>Upload</button>
+      <input type="text" value={ url } onChange={handleChange}/>
+      <button type="submit" onClick={handleSubmit}>Upload</button>
     </form>
   )
 }

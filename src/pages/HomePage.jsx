@@ -16,14 +16,12 @@ import React from 'react'
 import ImageUploaderForm from '../components/ImageUploaderForm.jsx'
 import FeedList from '../components/FeedList.jsx'
 
-function HomePage( props ) {
+function HomePage(  ) {
 
-  const { photos } = props;
   return (
-
     <div className="HomePage">
         <ImageUploaderForm />
-        <FeedList photos={ photos }/>
+        <FeedList/>
     </div>
   )
 }
