@@ -26,9 +26,10 @@ function FeedList() {
       <div className="FeedList">
         {
           // Photos is an array
-          photos.map( photo =>
-            <FeedItem photo={ photo } key={ photo.id } />
-          )
+            photos && photos.map( photo =>
+              <FeedItem photo={ photo } key={ photo.id } />
+            )
+
         }
       </div>
     )

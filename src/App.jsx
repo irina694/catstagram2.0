@@ -38,18 +38,24 @@
 	// set up Route to with paths to each page (hint: HomePage should "/") and with the appropriate component
 
 
-import React, {createContext,useState} from 'react'
+import React, { createContext, useState, useEffect } from 'react'
 import Header from './components/Header.jsx'
 import HomePage from './pages/HomePage.jsx'
-import data from './data.json'
 
 export const PhotosContext = createContext()
 
 function App() {
 
+const [ photos, setPhotosData ] = useState( [] )
 
-
-  const [ photos, setPhotosData ] = useState( data.photos )
+  useEffect(()  => {
+    fetch('https://api.jsonbin.io/b/600f8e05bca934583e41c665')
+      .then( response => response.json())
+      .then( response => response.photos )
+      .then( response => setPhotosData( response ))
+      .catch( error => console.log(error))
+      .finally()
+  },[])
 
   const addPhoto = url => {
     console.log(`Adding new photo with url: ${url}`)
@@ -84,8 +90,6 @@ function App() {
             <Header />
             <HomePage photos={ photos }/>
         </PhotosContext.Provider>
-
-
       </div>
   );
 }
