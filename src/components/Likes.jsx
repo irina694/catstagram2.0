@@ -52,7 +52,7 @@ function Likes( props ) {
         <button onClick={ handleIsLikedClick }>Not liked (yet)</button>
       }
       { isLiked &&
-        <button conClick={ handleIsLikedClick }>
+        <button onClick={ handleIsLikedClick }>
           <img className="liked" src={heart}/>
           Liked
         </button>
