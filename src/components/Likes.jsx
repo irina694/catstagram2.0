@@ -19,6 +19,7 @@
 	 // hint: take the total likes as a prop, and convert it to state
 
 import React, {useState} from 'react'
+import heart from '../images/pink-heart.jpg'
 
 function Likes( props ) {
 
@@ -51,7 +52,10 @@ function Likes( props ) {
         <button onClick={ handleIsLikedClick }>Not liked (yet)</button>
       }
       { isLiked &&
-        <button onClick={ handleIsLikedClick }>Liked</button>
+        <button conClick={ handleIsLikedClick }>
+          <img className="liked" src={heart}/>
+          Liked
+        </button>
       }
 
     </div>

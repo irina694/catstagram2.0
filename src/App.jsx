@@ -39,14 +39,19 @@
 
 
 import React, { createContext, useState, useEffect } from 'react'
-import Header from './components/Header.jsx'
-import HomePage from './pages/HomePage.jsx'
+import { BrowserRouter, Route } from 'react-router-dom'
+import Header from './components/Header'
+import HomePage from './pages/HomePage'
+import AboutPage from './pages/AboutPage'
+import ProfilePage from './pages/ProfilePage'
 
 export const PhotosContext = createContext()
 
 function App() {
 
-const [ photos, setPhotosData ] = useState( [] )
+
+
+  const [ photos, setPhotosData ] = useState( [] )
 
   useEffect(()  => {
     fetch('https://api.jsonbin.io/b/600f8e05bca934583e41c665')
@@ -85,12 +90,17 @@ const [ photos, setPhotosData ] = useState( [] )
   }
 
   return (
+    <BrowserRouter>
       <div className="App">
         <PhotosContext.Provider value={{ photos: photos, addPhoto: addPhoto }}>
             <Header />
-            <HomePage photos={ photos }/>
+            <Route exact path="/" component={HomePage} photos={ photos } />
+            <Route path="/about" component={AboutPage} />
+            <Route path="/profile" component={ProfilePage} />
         </PhotosContext.Provider>
       </div>
+    </BrowserRouter>
+
   );
 }
 

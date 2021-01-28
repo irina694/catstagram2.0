@@ -12,6 +12,54 @@ body {
     margin: 0 auto;
 }
 
+.AboutPage {
+    width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.ProfilePage {
+    width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.ProfileImageForm button {
+  background: lightgreen;
+  border: solid 1px black;
+}
+
+.ProfileImageForm button:hover {
+  cursor: pointer;
+}
+
+.ProfileImageForm img {
+  max-width: 50%;
+  border-radius: 50%;
+}
+
+.ProfileBio {
+  margin: 1em;
+}
+
+.ProfileBio textarea {
+    width: 70%;
+}
+
+.ProfileBio button {
+  background-color: lightblue;
+  border: none;
+  color: gray;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+.ProfileBio button:hover {
+  cursor: pointer;
+  background-color: lightgreen;
+}
+
 .Header {
     padding: 20px;
     font-size: 18px;
@@ -29,6 +77,13 @@ body {
 
 .Header a {
     color: white;
+    text-decoration: none;
+}
+
+.Header a:hover {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 .Logo {
@@ -77,6 +132,12 @@ body {
 
 .Likes span {
     flex: 1;
+}
+
+.Likes button .liked {
+  width: 15px;
+  background: transparent;
+  margin-right: 5px;
 }
 
 .LikesButton {

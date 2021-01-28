@@ -13,8 +13,8 @@
     // and don't pass it in as props to FeedList
 
 import React from 'react'
-import ImageUploaderForm from '../components/ImageUploaderForm.jsx'
-import FeedList from '../components/FeedList.jsx'
+import ImageUploaderForm from '../components/ImageUploaderForm'
+import FeedList from '../components/FeedList'
 
 function HomePage(  ) {
 
